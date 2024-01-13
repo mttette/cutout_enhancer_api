@@ -1,0 +1,72 @@
+the requests :
+GET /webMatting/photoEnhancer/submitTaskByUrl?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImp0aSI6IjUwMzU5ODg0OTc2NTU3MyJ9.Hy2fFwijfrYB9MtPi-7KEARnH63R7GYKB6aNq4VpmthaSrp54vQzYBRHHNiq0XG-_4zN8v0Ll8RAD62nuCILDQ&imageUrl=https://deeplor.s3.us-west-2.amazonaws.com/upload/2024/01/12/75a6bbe5a44e4e2b884093cdfc447398.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256%26X-Amz-Date=20240112T200128Z%26X-Amz-SignedHeaders=host%26X-Amz-Expires=10800%26X-Amz-Credential=AKIAROYXHKZUSZONTWIG%2F20240112%2Fus-west-2%2Fs3%2Faws4_request%26X-Amz-Signature=f0a17f5632f7a6ec26277f969eb5911f8ed96053d1b9ccf1624e8165d576af04 HTTP/2
+Host: restapi.cutout.pro
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImp0aSI6IjUwMzU5ODg0OTc2NTU3MyJ9.Hy2fFwijfrYB9MtPi-7KEARnH63R7GYKB6aNq4VpmthaSrp54vQzYBRHHNiq0XG-_4zN8v0Ll8RAD62nuCILDQ
+Origin: https://www.cutout.pro
+Dnt: 1
+Referer: https://www.cutout.pro/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+Te: trailers
+
+RESPONSE : {"code":0,"data":"a08b4afca5844aa197c6dca763364e6c","msg":"","time":1705091569802,"requestId":"65a1a1f1eede3d7539ec47866f2dba15"}
+
+AND
+
+GET /webMatting/photoEnhancer/getTaskInfo?&id=a08b4afca5844aa197c6dca763364e6c HTTP/2
+Host: restapi.cutout.pro
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Origin: https://www.cutout.pro
+Dnt: 1
+Referer: https://www.cutout.pro/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+Te: trailers
+
+RESPONSE:
+CHECK IF THE DATA/STATUS IS success
+{"code":0,"data":{"percentage":null,"previewHeight":543,"original":"https://deeplor.s3.us-west-2.amazonaws.com/matting_original/2024/01/12/bea028ad85354d87b9c4796aa3e2e4b3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240112T203249Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=AKIAROYXHKZUSZONTWIG%2F20240112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=1e103751c3800e4309b3224c74b385c8377f6a977701031fb431e533c6f934f9","bgRemoved":null,"originalHeight":1680,"bgRemovedPreview":"https://deeplor.s3.us-west-2.amazonaws.com/matting_original/2024/01/12/541d064b6c4e427c89345c588d28bb24.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240112T203303Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=AKIAROYXHKZUSZONTWIG%2F20240112%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=f271676de795e0371271aa4953bfaf82be06f13e9a474dee65ff188d0b9d6bbb","downloadFileUrl":null,"originalWidth":3200,"status":"success","fileId":503624367292677,"previewWidth":1035},"msg":"","time":1705091583929,"requestId":"65a1a1ff980c5c3fa9f638ee73e7e2c0"}
+
+AND
+
+GET /webMatting/photoEnhancer/download?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImp0aSI6IjUwMzU5ODg0OTc2NTU3MyJ9.Hy2fFwijfrYB9MtPi-7KEARnH63R7GYKB6aNq4VpmthaSrp54vQzYBRHHNiq0XG-_4zN8v0Ll8RAD62nuCILDQ&id=ad2806684f014d4ebc49068ad15d454d HTTP/2
+Host: restapi.cutout.pro
+Http/2:
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhdXRoMCIsImp0aSI6IjUwMzU5ODg0OTc2NTU3MyJ9.Hy2fFwijfrYB9MtPi-7KEARnH63R7GYKB6aNq4VpmthaSrp54vQzYBRHHNiq0XG-_4zN8v0Ll8RAD62nuCILDQ
+Origin: https://www.cutout.pro
+Dnt: 1
+Referer: https://www.cutout.pro/
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-site
+Te: trailers
+
+THIS RETURN :
+
+HTTP/2 200 OK
+Date: Fri, 12 Jan 2024 20:06:56 GMT
+Content-Type: application/json
+Server: nginx
+Access-Control-Allow-Origin: https://www.cutout.pro
+Access-Control-Allow-Credentials: true
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Set-Cookie: ClientFlag=f2c238aa25c84e30a7b5676c6af27605; Max-Age=2592000; Expires=Sun, 11-Feb-2024 20:06:56 GMT
+Request-Id: 65a19be094237f96283d4cc02893ddb1
+
+{"code":4001,"data":null,"msg":"Insufficient credits","time":1705090016079,"requestId":"65a19be094237f96283d4cc02893ddb1"}
+IF DATA NULL NEW TOKEN OK?
