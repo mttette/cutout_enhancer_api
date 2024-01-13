@@ -127,7 +127,12 @@ func EnhanceRequest(url string) (string,error) {
         return "", &NewError{Message: data.Msg}
     }
 
-    return data.Data.(string) , nil
+    taskId, ok := data.Data.(string)
+    if !ok {
+        return "", &NewError{Message: "CE : "+ data.Msg}
+    }
+
+    return taskId , nil
 }
 
 func GetHDdownloadUrl(id string) (string, error) {
@@ -175,7 +180,12 @@ func GetHDdownloadUrl(id string) (string, error) {
         return "", &NewError{Message: data.Msg}
     }
 
-    return data.Data.(string), nil
+    downloadUrl, ok := data.Data.(string)
+    if !ok {
+        return "",&NewError{Message: "CE : " + data.Msg}
+    }
+
+    return downloadUrl, nil
 }
 
 

@@ -33,32 +33,39 @@ func GetEnhanceUrl(url string,tries int) (string,error) {
 }
 func PostEnhanceHandler(w http.ResponseWriter, r *http.Request) {
     var payload RequestPayload
-	err := json.NewDecoder(r.Body).Decode(&payload)
-	if err != nil {
-		http.Error(w, "Invalid JSON payload", http.StatusBadRequest)
-		return
-	}
+    err := json.NewDecoder(r.Body).Decode(&payload)
+    if err != nil {
+        http.Error(w, "Invalid JSON payload", http.StatusBadRequest)
+        return
+    }
 
     if payload.URL == "" {
-		http.Error(w, "Missing 'url' in payload", http.StatusBadRequest)
-		return
-	}
-
-    url, err  := models.ReplaceAmpersand(payload.URL); if err != nil {
-        http.Error(w, err.Error(),http.StatusInternalServerError)
+        http.Error(w, "Missing 'url' in payload", http.StatusBadRequest)
         return
     }
 
-    responseUrl, err := GetEnhanceUrl(url,0)
+    url, err := models.ReplaceAmpersand(payload.URL)
     if err != nil {
-        http.Error(w, err.Error(),http.StatusInternalServerError)
+        http.Error(w, err.Error(), http.StatusInternalServerError)
         return
     }
 
-    //response := ResponseInstance{DATA: responseUrl}
-    //w.Header().Set("Content-Type", "application/text")
-	//w.WriteHeader(http.StatusOK)
-	//json.NewEncoder(w).Encode(response)
-    fmt.Fprint(w,responseUrl)
+    // Use a channel to collect results from goroutines
+    resultChan := make(chan string, 1)
 
+    // Launch a goroutine for each request
+    go func(url string) {
+        responseUrl, err := GetEnhanceUrl(url, 0)
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+            return
+        }
+        resultChan <- responseUrl
+    }(url)
+
+    // Wait for the result from the goroutine
+    responseUrl := <-resultChan
+
+    // Respond to the client
+    fmt.Fprint(w, responseUrl)
 }
